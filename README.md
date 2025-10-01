@@ -1,4 +1,4 @@
-# TestProject Todo Experience
+# TodoApp Todo Experience
 
 This SwiftUI sample now surfaces a three-tab todo workflow backed by a shared task store.
 
@@ -18,9 +18,9 @@ This SwiftUI sample now surfaces a three-tab todo workflow backed by a shared ta
 - **Success Metrics**: Daily active users retaining >70% task completion rate per week; median of five tasks added per active day; <2% crash-free sessions over seven-day rolling window; time-to-complete (add → mark done) under ten seconds for 90th percentile sessions.
 
 ## Architecture Notes
-- `TaskStore` (`Sources/TestProject/Models/TaskStore.swift`) maintains all tasks, slices them into incomplete/completed sets, and calculates weekly summaries while coordinating persistence.
-- `TaskPersistence` (`Sources/TestProject/Models/TaskPersistence.swift`) serializes tasks to JSON under Application Support.
-- Feature-specific SwiftUI views live under `Sources/TestProject/Features/`, each consuming the shared store via `EnvironmentObject`.
+- `TaskStore` (`Sources/TodoApp/Models/TaskStore.swift`) maintains all tasks, slices them into incomplete/completed sets, and calculates weekly summaries while coordinating persistence.
+- `TaskPersistence` (`Sources/TodoApp/Models/TaskPersistence.swift`) serializes tasks to JSON under Application Support.
+- Feature-specific SwiftUI views live under `Sources/TodoApp/Features/`, each consuming the shared store via `EnvironmentObject`.
 - Preview providers are wrapped in `#if DEBUG` to avoid build issues with the freestanding preview macro.
 
 ## Using the App

@@ -1,10 +1,10 @@
 # Repository Guidelines
 
 ## Project Structure & Module Organization
-- `Package.swift` defines a single SwiftUI target named `TestProject`; keep public APIs scoped to that module.
-- Source code lives under `Sources/TestProject/`. Entry points include `TestProjectApp.swift` and `ContentView.swift`; organize new features in subfolders (for example `Sources/TestProject/Features/Home`).
+- `Package.swift` defines a single SwiftUI target named `TodoApp`; keep public APIs scoped to that module.
+- Source code lives under `Sources/TodoApp/`. Entry points include `TodoAppApp.swift` and `ContentView.swift`; organize new features in subfolders (for example `Sources/TodoApp/Features/Home`).
 - Reusable assets (images, JSON, localized strings) belong in a `Resources/` subdirectory inside the target so Swift Package Manager can bundle them.
-- `.build/` and `xtool/TestProject.app` are generated artifacts; avoid committing edits and purge them before creating archives.
+- `.build/` and `xtool/TodoApp.app` are generated artifacts; avoid committing edits and purge them before creating archives.
 
 ## Build, Test, and Development Commands
 - `xtool dev build` — compiles the Swift package with the Darwin toolchain; run after dependency or API changes.
@@ -18,7 +18,7 @@
 - Run `swift format --in-place Sources` if SwiftFormat is available; otherwise match the existing style closely.
 
 ## Testing Guidelines
-- Add unit or snapshot suites under `Tests/`, mirroring source folders (for example `Tests/TestProjectTests/ContentViewTests.swift`).
+- Add unit or snapshot suites under `Tests/`, mirroring source folders (for example `Tests/TodoAppTests/ContentViewTests.swift`).
 - Name test cases `<Subject>Tests` and methods `test_<condition>_<expectedResult>()` for clarity.
 - Use `XCTAssert` families for logic and `ViewInspector` (if added) for SwiftUI hierarchy checks.
 - Target ≥80% coverage on new modules and note any intentional gaps in pull requests.
@@ -29,5 +29,5 @@
 - Pull requests should cover motivation, implementation notes, test evidence (`swift test` output), and any follow-up tasks.
 
 ## Configuration & Environment Notes
-- `xtool.yml` stores the bundle identifier (`com.example.TestProject`); update it alongside any Info.plist changes in downstream tooling.
+- `xtool.yml` stores the bundle identifier (`com.example.TodoApp`); update it alongside any Info.plist changes in downstream tooling.
 - The project targets iOS 17 and macOS 14—keep APIs within those platform availability windows and gate newer APIs with `@available` where required.
