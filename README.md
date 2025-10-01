@@ -1,4 +1,4 @@
-# TodoApp Todo Experience
+# TodoApp
 
 This SwiftUI sample now surfaces a three-tab todo workflow backed by a shared task store.
 
